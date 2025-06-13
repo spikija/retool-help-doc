@@ -21,7 +21,7 @@ jobs:
           | sed '1s/.*<body[^>]*>//' \
           | sed '$s/<\/body>.*//' > help_stripped.html
 
-       - name: Commit and push help_stripped.html
+      - name: Commit and push help_stripped.html
         env:
           PAT: ${{ secrets.PAT }}
         run: |
