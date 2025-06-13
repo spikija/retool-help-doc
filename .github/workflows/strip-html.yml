@@ -6,7 +6,7 @@ on:
       - help.html
 
 permissions:
-  contents: write  # Give the action permission to push
+  contents: write
 
 jobs:
   strip-html:
@@ -18,17 +18,18 @@ jobs:
 
       - name: Strip <html>/<body> tags from help.html
         run: |
+          # Extract only content inside <body>...</body>
           sed -n '/<body/,/<\/body>/p' help.html \
           | sed '1s/.*<body[^>]*>//' \
-          | sed '$s/<\/body>.*//' > help_stripped.html
+          | sed '$s/<\/body>.*//' \
+          | sed 's/<div class="crossnote markdown-preview.*">//' \
+          | sed 's|</div>||' \
+          > help_stripped.html
 
       - name: Commit and push help_stripped.html
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add help_stripped.html
           git commit -m "Auto-update stripped HTML" || echo "No changes to commit"
-
           git push

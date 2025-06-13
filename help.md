@@ -18,5 +18,5 @@ Categorisation of cerebral amyloid angiopathy: done by an expert user, mostly st
 Cases
 Data dumped checkbox - whether PDF data from ORBIS was locally extracted
 
-Author: Dr. Slaven Pikija MSc, Medical University Graz
+Author: Dr. Slaven Pikija MSc, Medical University Graz, Austria
 Last Changed: 13.06.2025
