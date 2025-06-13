@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo with full access
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT }}
 
       - name: Strip <html>/<body> tags from help.html
         run: |
