@@ -15,5 +15,8 @@ One should start by filling out the "Cases" form with general data. This form wi
 Source of data: usually from PDF documents from hospital-based systems or interviews.
 Categorisation of cerebral amyloid angiopathy: done by an expert user, mostly study physician.
 
-Author: Dr. Slaven Pikija MSc
+Cases
+Data dumped checkbox - whether PDF data from ORBIS was locally extracted
+
+Author: Dr. Slaven Pikija MSc, Medical University Graz
 Last Changed: 13.06.2025
