@@ -1,0 +1,28 @@
+name: Strip HTML Wrapper from help.html
+
+on:
+  push:
+    paths:
+      - help.html
+
+jobs:
+  strip-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Strip <html>/<body> tags from help.html
+        run: |
+          sed -n '/<body/,/<\/body>/p' help.html \
+          | sed '1s/.*<body[^>]*>//' \
+          | sed '$s/<\/body>.*//' > help_stripped.html
+
+      - name: Commit help_stripped.html
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add help_stripped.html
+          git commit -m "Auto-update stripped HTML" || echo "No changes to commit"
+          git push
