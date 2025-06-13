@@ -13,7 +13,7 @@ Data about patients is entered through a series of tabs that can be selected fro
 One should start by filling out the "Cases" form with general data. This form will later be updated upon correct cerebral amyloid angiopathy classification.
 
 Source of data: usually from PDF documents from hospital-based systems or interviews.
-Categorisation of cerebral amyloid angiopathy: done by an expert user.
+Categorisation of cerebral amyloid angiopathy: done by an expert user, mostly study physician.
 
 Author: Slaven Pikija
 Last Changed: 13.06.2025
